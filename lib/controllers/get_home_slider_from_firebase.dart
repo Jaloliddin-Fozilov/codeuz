@@ -10,21 +10,21 @@ class GetHomeSliderFromFirebase {
       function: () {},
     ),
     HomeSliderBanner(
-      id: '01',
+      id: '02',
       title: 'Flutter/Dart',
       image:
           'https://habrastorage.org/webt/62/mi/k2/62mik21owvorktgfeu43wmwwqx4.png',
       function: () {},
     ),
     HomeSliderBanner(
-      id: '01',
+      id: '03',
       title: 'Flutter/Dart',
       image:
           'https://habrastorage.org/webt/62/mi/k2/62mik21owvorktgfeu43wmwwqx4.png',
       function: () {},
     ),
     HomeSliderBanner(
-      id: '01',
+      id: '04',
       title: 'Flutter/Dart',
       image:
           'https://habrastorage.org/webt/62/mi/k2/62mik21owvorktgfeu43wmwwqx4.png',
