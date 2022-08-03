@@ -43,10 +43,16 @@ class HomeScreen extends StatelessWidget {
         children: [
           const HomeSlider(),
           HomeBlocksTitleAndButton(
-            title: 'Categories',
-            buttonText: 'See all',
+            title: 'Kategoriyalar',
+            buttonText: 'Barchasi',
             buttonFunction: () {},
             bottomBlock: HomeCategoriesSlideBlock(),
+          ),
+          HomeBlocksTitleAndButton(
+            title: 'Dizanyga oid darslar',
+            buttonText: 'Barchasi',
+            buttonFunction: () => print('button all'),
+            bottomBlock: Container(),
           ),
         ],
       ),
