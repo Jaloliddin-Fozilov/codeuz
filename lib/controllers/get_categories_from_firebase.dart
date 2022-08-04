@@ -138,4 +138,9 @@ class GetCategoriesFromFirebase {
   List<CategoryModel> get list {
     return [..._list];
   }
+
+  CategoryModel getCategoryById(String id) {
+    print(id);
+    return _list.firstWhere((category) => category.id == id);
+  }
 }
