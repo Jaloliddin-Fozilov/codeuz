@@ -1,28 +1,20 @@
-import 'package:codeuz/models/playlist_model.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../models/category_model.dart';
 import '../../models/video_model.dart';
 
-class PlayListItemHomePage extends StatelessWidget {
-  PlayListItemHomePage({
+class VideoItem extends StatelessWidget {
+  VideoItem({
     Key? key,
-    required this.category,
-    required this.playlist,
+    required this.video,
   }) : super(key: key);
 
-  final PlaylistModel playlist;
-  final CategoryModel category;
+  final VideoModel video;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed('/videos', arguments: {
-        'id': playlist.id,
-        'title': playlist.title,
-        'isCategory': false,
-      }),
+      onTap: () {},
       child: Container(
         margin: const EdgeInsets.only(left: 16),
         child: Card(
@@ -38,7 +30,7 @@ class PlayListItemHomePage extends StatelessWidget {
                     bottomLeft: Radius.circular(5),
                   ),
                   child: Image.network(
-                    playlist.imageUrl,
+                    video.image,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -59,21 +51,7 @@ class PlayListItemHomePage extends StatelessWidget {
                           strutStyle: const StrutStyle(fontSize: 18.0),
                           text: TextSpan(
                             style: const TextStyle(color: Colors.black),
-                            text: playlist.title,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.all(3),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Text(
-                          category.title!,
-                          style: const TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
+                            text: video.title,
                           ),
                         ),
                       ),

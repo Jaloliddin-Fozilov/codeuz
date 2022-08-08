@@ -1,4 +1,5 @@
 import 'package:codeuz/views/screens/video_detail_screen.dart';
+import 'package:codeuz/views/screens/videos_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,6 +22,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/home',
           page: () => HomeScreen(),
+        ),
+        GetPage(
+          name: '/videos',
+          page: () => VideosScreen(),
         ),
         GetPage(
           name: '/detail',

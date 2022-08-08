@@ -6,7 +6,8 @@ class GetVideosFromFirebase {
     PlaylistModel(
       id: '02',
       title: 'Flutter/Dart',
-      imageUrl: 'https://www.youtube.com/watch?v=GJQu0_Nr9Qc',
+      imageUrl:
+          'https://habrastorage.org/webt/62/mi/k2/62mik21owvorktgfeu43wmwwqx4.png',
       categoryId: 'mobile_programming',
       videos: [
         VideoModel(
@@ -79,6 +80,10 @@ class GetVideosFromFirebase {
 
   List<PlaylistModel> get list {
     return [..._list];
+  }
+
+  PlaylistModel getPlaylistById(String id) {
+    return _list.firstWhere((playlist) => playlist.id == id);
   }
 
   VideoModel getVideoById(String playlistId, String id) {
