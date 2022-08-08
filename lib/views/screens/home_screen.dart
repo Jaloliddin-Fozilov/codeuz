@@ -1,4 +1,5 @@
 import 'package:codeuz/controllers/get_videos_from_firebase.dart';
+import 'package:codeuz/models/playlist_model.dart';
 import 'package:codeuz/models/video_model.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ import '../widgets/home_videos_block.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
-  List<VideoModel> videos = GetVideosFromFirebase().list;
+  List<PlaylistModel> playlist = GetVideosFromFirebase().list;
 
   @override
   Widget build(BuildContext context) {
@@ -57,13 +58,13 @@ class HomeScreen extends StatelessWidget {
               title: 'Dasturlashga oid darslar',
               buttonText: 'Barchasi',
               buttonFunction: () => print('button all'),
-              bottomBlock: HomeVideosBlock(videos: videos),
+              bottomBlock: HomeVideosBlock(playlist: playlist),
             ),
             HomeBlocksTitleAndButton(
               title: 'Dizanyga oid darslar',
               buttonText: 'Barchasi',
               buttonFunction: () => print('button all'),
-              bottomBlock: HomeVideosBlock(videos: videos),
+              bottomBlock: HomeVideosBlock(playlist: playlist),
             ),
             const SizedBox(height: 10),
           ],

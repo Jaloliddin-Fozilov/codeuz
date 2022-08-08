@@ -1,22 +1,24 @@
+import 'package:codeuz/models/playlist_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../models/category_model.dart';
 import '../../models/video_model.dart';
 
-class VideoItem extends StatelessWidget {
-  VideoItem({
+class PlayListItemHomePage extends StatelessWidget {
+  PlayListItemHomePage({
     Key? key,
     required this.category,
-    required this.video,
+    required this.playlist,
   }) : super(key: key);
 
-  final VideoModel video;
+  final PlaylistModel playlist;
   final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.toNamed('/detail', arguments: playlist.id),
       child: Container(
         margin: const EdgeInsets.only(left: 16),
         child: Card(
@@ -32,7 +34,7 @@ class VideoItem extends StatelessWidget {
                     bottomLeft: Radius.circular(5),
                   ),
                   child: Image.network(
-                    video.image,
+                    playlist.imageUrl,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -53,7 +55,7 @@ class VideoItem extends StatelessWidget {
                           strutStyle: const StrutStyle(fontSize: 18.0),
                           text: TextSpan(
                             style: const TextStyle(color: Colors.black),
-                            text: video.title,
+                            text: playlist.title,
                           ),
                         ),
                       ),
