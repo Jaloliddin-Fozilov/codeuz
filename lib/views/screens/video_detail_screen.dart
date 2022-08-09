@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pod_player/pod_player.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../controllers/get_videos_from_firebase.dart';
 import '../../models/video_model.dart';
@@ -70,20 +71,77 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                       fontSize: 14,
                     ),
                   ),
-                  SizedBox(
-                    height: 500,
-                    child: ListView.builder(
-                      itemCount: playlistVideos.length,
-                      itemBuilder: (ctx, i) {
-                        return ListTile(
-                          leading: CircleAvatar(
-                            backgroundImage:
-                                NetworkImage(playlistVideos[i].image),
-                          ),
-                        );
-                      },
-                    ),
-                  )
+                  Column(
+                    children: [
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Playlist',
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 250,
+                        child: ListView.builder(
+                          itemCount: playlistVideos.length,
+                          itemBuilder: (ctx, i) {
+                            return ListTile(
+                              dense: true,
+                              enabled: video.id == playlistVideos[i].id
+                                  ? false
+                                  : true,
+                              onTap: () {
+                                Get.back();
+                                Get.toNamed('/detail', arguments: {
+                                  'playlistId': playlistVideos[i].playlistId,
+                                  'id': playlistVideos[i].id,
+                                });
+                              },
+                              leading: CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                  playlistVideos[i].image,
+                                ),
+                              ),
+                              title: Flexible(
+                                child: RichText(
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                  strutStyle: const StrutStyle(fontSize: 14.0),
+                                  text: TextSpan(
+                                    style: TextStyle(
+                                      color: playlistVideos[i].id == video.id
+                                          ? Colors.blue
+                                          : Colors.black,
+                                    ),
+                                    text: playlistVideos[i].title,
+                                  ),
+                                ),
+                              ),
+                              trailing: IconButton(
+                                onPressed: () {
+                                  Get.back();
+                                  Get.toNamed('/detail', arguments: {
+                                    'playlistId': playlistVideos[i].playlistId,
+                                    'id': playlistVideos[i].id,
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.play_circle,
+                                  color: playlistVideos[i].id == video.id
+                                      ? Colors.blue
+                                      : Colors.grey,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () => launchUrl(Uri.parse(video.url)),
+                        child: const Text('YouTubeda ko\'rish'),
+                      )
+                    ],
+                  ),
                 ],
               ),
             ),
