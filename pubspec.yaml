@@ -37,6 +37,7 @@ dependencies:
   get: ^4.6.5
   http: ^0.13.4
   carousel_slider: ^4.1.1
+  pod_player: ^0.1.0
 
 dev_dependencies:
   flutter_test:

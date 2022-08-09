@@ -14,7 +14,8 @@ class GetVideosFromFirebase {
           id: '01',
           playlistId: '02',
           title: 'Flutter/Dart',
-          description: 'Mobiel development Flutter Dart',
+          description:
+              'Mobiel development Flutter Dart Mobiel development Flutter DartMobiel development Flutter Dart Mobiel development Flutter Dartv Mobiel development Flutter Dart',
           image:
               'https://habrastorage.org/webt/62/mi/k2/62mik21owvorktgfeu43wmwwqx4.png',
           url: 'https://www.youtube.com/watch?v=GJQu0_Nr9Qc',
@@ -86,9 +87,14 @@ class GetVideosFromFirebase {
     return _list.firstWhere((playlist) => playlist.id == id);
   }
 
+  List<VideoModel> getPlaylistVideoByPlaylistId(String id) {
+    final indexPlaylist = _list.indexWhere((playlist) => playlist.id == id);
+    return _list[indexPlaylist].videos;
+  }
+
   VideoModel getVideoById(String playlistId, String id) {
     final indexPlaylist =
-        _list.indexWhere((playlist) => playlist.id == playlist);
+        _list.indexWhere((playlist) => playlist.id == playlistId);
     return _list[indexPlaylist].videos.firstWhere((video) => video.id == id);
   }
 }
