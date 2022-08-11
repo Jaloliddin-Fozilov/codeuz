@@ -35,12 +35,13 @@ class GetCategoriesFromFirebase {
       short: 'Mobile',
       icon:
           'https://habrastorage.org/webt/7e/e3/me/7ee3me3dao_4izkybtdbwioo-q8.png',
-      children: [
-        {
-          'id': 'flutter_id',
-          'title': 'Flutter/Dart',
-        },
-      ],
+    ),
+    CategoryModel(
+      id: 'design_modeling',
+      title: 'Design modeling 3D',
+      short: 'Modeling',
+      icon:
+          'https://habrastorage.org/webt/g7/bm/sh/g7bmshvjk0zru2lira_6twhu-es.png',
     ),
     CategoryModel(
       id: 'web_development',
@@ -48,12 +49,6 @@ class GetCategoriesFromFirebase {
       short: 'Web dev',
       icon:
           'https://habrastorage.org/webt/yu/th/tp/yuthtpdp3d88ieejogjj8p7jpfe.png',
-      children: [
-        {
-          'id': 'html',
-          'title': 'HTML',
-        },
-      ],
     ),
     CategoryModel(
       id: 'mobile_programming',
@@ -61,12 +56,6 @@ class GetCategoriesFromFirebase {
       short: 'Mobile',
       icon:
           'https://habrastorage.org/webt/7e/e3/me/7ee3me3dao_4izkybtdbwioo-q8.png',
-      children: [
-        {
-          'id': 'flutter_id',
-          'title': 'Flutter/Dart',
-        },
-      ],
     ),
     CategoryModel(
       id: 'web_development',
@@ -74,12 +63,6 @@ class GetCategoriesFromFirebase {
       short: 'Web dev',
       icon:
           'https://habrastorage.org/webt/yu/th/tp/yuthtpdp3d88ieejogjj8p7jpfe.png',
-      children: [
-        {
-          'id': 'html',
-          'title': 'HTML',
-        },
-      ],
     ),
     CategoryModel(
       id: 'mobile_programming',
@@ -87,12 +70,6 @@ class GetCategoriesFromFirebase {
       short: 'Mobile',
       icon:
           'https://habrastorage.org/webt/7e/e3/me/7ee3me3dao_4izkybtdbwioo-q8.png',
-      children: [
-        {
-          'id': 'flutter_id',
-          'title': 'Flutter/Dart',
-        },
-      ],
     ),
     CategoryModel(
       id: 'web_development',
@@ -100,12 +77,6 @@ class GetCategoriesFromFirebase {
       short: 'Web dev',
       icon:
           'https://habrastorage.org/webt/yu/th/tp/yuthtpdp3d88ieejogjj8p7jpfe.png',
-      children: [
-        {
-          'id': 'html',
-          'title': 'HTML',
-        },
-      ],
     ),
     CategoryModel(
       id: 'mobile_programming',
@@ -113,12 +84,6 @@ class GetCategoriesFromFirebase {
       short: 'Mobile',
       icon:
           'https://habrastorage.org/webt/7e/e3/me/7ee3me3dao_4izkybtdbwioo-q8.png',
-      children: [
-        {
-          'id': 'flutter_id',
-          'title': 'Flutter/Dart',
-        },
-      ],
     ),
     CategoryModel(
       id: 'web_development',
@@ -126,12 +91,6 @@ class GetCategoriesFromFirebase {
       short: 'Web dev',
       icon:
           'https://habrastorage.org/webt/yu/th/tp/yuthtpdp3d88ieejogjj8p7jpfe.png',
-      children: [
-        {
-          'id': 'html',
-          'title': 'HTML',
-        },
-      ],
     ),
   ];
 

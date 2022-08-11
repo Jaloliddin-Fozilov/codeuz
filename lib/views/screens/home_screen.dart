@@ -11,8 +11,6 @@ import '../widgets/home_videos_block.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
-  List<PlaylistModel> playlist = GetVideosFromFirebase().list;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,13 +56,13 @@ class HomeScreen extends StatelessWidget {
               title: 'Dasturlashga oid darslar',
               buttonText: 'Barchasi',
               buttonFunction: () => print('button all'),
-              bottomBlock: HomeVideosBlock(playlist: playlist),
+              bottomBlock: HomeVideosBlock(categoryId: 'mobile_programming'),
             ),
             HomeBlocksTitleAndButton(
               title: 'Dizanyga oid darslar',
               buttonText: 'Barchasi',
               buttonFunction: () => print('button all'),
-              bottomBlock: HomeVideosBlock(playlist: playlist),
+              bottomBlock: HomeVideosBlock(categoryId: 'design_modeling'),
             ),
             const SizedBox(height: 10),
           ],
